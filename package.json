@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-boilerplate",
+  "version": "1.0.0",
+  "description": "boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "author": "Maaz Sabah Uddin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
