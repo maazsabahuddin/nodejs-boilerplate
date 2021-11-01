@@ -2,7 +2,7 @@
 const config = require("./common/config/env.config")
 const express = require("express")
 const app = express();
-
+const bodyParser = require('body-parser');
 const UserRouter = require("./users/routes.config")
 
 app.use(function (req, res, next){
@@ -11,6 +11,14 @@ app.use(function (req, res, next){
     } else {
         return next();
     }
+});
+
+
+app.use((req, res, next) => {
+    bodyParser.json()(req, res, err => {
+        if (err) return res.json({error: "Invalid JSON, Bad request."}); // Bad request
+        next();
+    });
 });
 
 app.use(express.json());

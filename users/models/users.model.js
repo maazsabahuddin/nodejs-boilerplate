@@ -1,4 +1,4 @@
-const mongoose = require('../../common/services/mongoose.service');
+const mongoose = require('../../common/services/mongoose.service').mongoose;
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
@@ -7,12 +7,12 @@ const userSchema = new Schema({
     phonenumber: String,
     password: String,
     password_salt: String,
-    state: {id: Int16Array, name: String},
-    gender: {id: Int16Array, name: String},
+    state: {id: Number, name: String},
+    gender: {id: Number, name: String},
     display_picture: String,
-    preferred_languaage: {id: Int16Array, name: String},
-    created_at: {},
-    updated_at: {}
+    preferred_languaage: {id: Number, name: String},
+    created_at: Number,
+    updated_at: Number
 })
 
 userSchema.findById = function() {
